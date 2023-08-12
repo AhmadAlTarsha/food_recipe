@@ -1,12 +1,17 @@
-.App {
+
+.main_screen {
+
   display: grid;
   text-align: center;
-
+ 
 justify-content: center;
 }
-.divButton{
-display: grid;
-width: 200px;
-gap: 20px;
+.categories_button{
+  display: grid;
 
+  gap: 30px;
+}
+.divButton{
+  display: grid;
+  gap: 20px;
 }
