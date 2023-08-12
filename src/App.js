@@ -1,30 +1,24 @@
 import { useState,useEffect } from "react";
-import axios from "axios";
-import "./App.css";
 import Categories from "./componants/categories";
+import "./App.css";
+import Recipes from "./componants/recipes";
 
 
-const categories = ["chicken","mango","spaghetti","chocolate", "fish","rice","meat", ]
 
-
- 
-const showCategories= categories.map((categories,i)=>{
-  return <p id={categories}>{ categories}</p>
-  
-  
-})
 
 function App() {
- const [id,setId]=useState("mango")
+ //const [id,setId]=useState("")
+ const [show,setShow]=useState(true)
+ //const [show,setShow]=useState(true)
+ const [selectedCategory, setSelectedCategory] = useState(null);
+ const [id, setid] = useState("")
   return (
-    <div className="App">
-      <h1 onClick={(e)=>{
-        console.log(e.target.id
-          );
-        setId(e.target.id)
-      }}>{showCategories}</h1>
-      <Categories  id={id}/>
+    <div  className="App">
+      <h1 >food Recipes</h1>
+     {show? <Categories show={show} setShow={setShow} setSelectedCategory={setSelectedCategory} setid={setid}/>:
+     <Recipes show={show} setShow={setShow} selectedCategory={selectedCategory} id={id}/>
     
+     }
     </div>
   );
 }

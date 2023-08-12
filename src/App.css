@@ -1,3 +1,12 @@
 .App {
+  display: grid;
   text-align: center;
+
+justify-content: center;
+}
+.divButton{
+display: grid;
+width: 200px;
+gap: 20px;
+
 }
