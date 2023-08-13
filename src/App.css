@@ -66,3 +66,13 @@ border: none;
 gap: 
 20px;
 height: 350;}
+
+.main_details_2{
+  width: 400px;
+  height: 150px;
+display: grid;
+grid-template-columns: 1fr 1fr ;
+}
+.ingredient{
+  
+}

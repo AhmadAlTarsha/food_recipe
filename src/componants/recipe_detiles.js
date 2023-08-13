@@ -1,10 +1,10 @@
 import React from 'react'
 
 const Recipes_details = ({ currentRecipes, showRecipeDetail, setShowRecipeDetail, setShowMainScreen, setShowRecipes }) => {
-  const ingredient=currentRecipes.recipe.ingredientLines
-const allingredient=  ingredient.map((ele,i)=>{
+  const allIngredient =currentRecipes.recipe.ingredientLines.map((ele,i)=>{
     return <ul><li>{ele}</li></ul>
   })
+
   const dishType= currentRecipes.recipe.dishType.map((dishType,i)=>{
     return <>{dishType}</>
   })
@@ -22,7 +22,7 @@ const allingredient=  ingredient.map((ele,i)=>{
         console.log(currentRecipes.recipe);
 
         setShowRecipeDetail(!showRecipeDetail)
-      }}>Back</button></div> <div className='main_details' ><div><p>{currentRecipes.recipe.label}</p><p>{`caloeies : ${currentRecipes.recipe.calories} `}</p><p>DishType : {dishType}</p><p>CuisineType : {cuisineType}</p></div> <div>{allingredient}</div><div><h3>see the Recipe in the site</h3></div></div></div>
+      }}>Back</button></div> <div className='main_details' ><div className='main_details_2'  ><p>{currentRecipes.recipe.label}</p><p>{`caloeies : ${currentRecipes.recipe.calories} `}</p><p>DishType : {dishType}</p><p>CuisineType : {cuisineType}</p></div> <div className='ingredient'>{allIngredient}</div><div><h3>see the Recipe in the site</h3></div></div></div>
    
 
   )
