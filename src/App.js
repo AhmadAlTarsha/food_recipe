@@ -1,7 +1,7 @@
 import { useState, } from "react";
 import Categories from "./componants/categories";
 import "./App.css";
-import Recipes from "./componants/recipes";
+import Recipes from "./componants/recipe_card";
 import Recipes_details from "./componants/recipe_detiles";
 import logo from  "./logo/logo.png"
 
@@ -17,7 +17,7 @@ function App() {
   const [currentRecipes, setcurrentRecipes] = useState(null)
   const [id, setid] = useState("")
   return (
-    <div className="All_componants"> <div ><div className="app_Name_logo"><h1 id="app_title" >Food Recipes</h1> <img className="app_logo" src={logo}/></div></div> <div className="nav_bar"></div> <div className="recipe_card">
+    <div className="All_componants"> <div ><div className="app_Name_logo"><h1 id="app_title" >Food Recipes</h1> <img className="app_logo" src={logo}/></div></div> <div className="nav_bar"></div> <div className="recipes_card">
 
       
       {showMainScreen && <Categories showRecipes={showRecipes} setShowRecipes={setShowRecipes} showMainScreen={showMainScreen} setShowMainScreen={setShowMainScreen} setSelectedCategory={setSelectedCategory} setid={setid} />}

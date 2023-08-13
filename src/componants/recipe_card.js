@@ -10,16 +10,11 @@ const Recipes = ({ showRecipes, setShowRecipes, showMainScreen, setShowMainScree
   const [currentCategories, setCurrentCategories] = useState([])
   useEffect(() => {
     getCurrentCategories()
-    console.log(id);
   }, [])
 
   const getCurrentCategories = () => {
     axios.get(`https://api.edamam.com/search?q=${id}&app_id=${_id}&app_key=${app_key}&from=0&to=4&calories=591-722&health=alcohol-free`).then((response) => {
-
       setCurrentCategories(response.data.hits)
-      //console.log(currentCategories);
-     // console.log(response.data);
-
     })
       .catch((err) => {
         console.log(err);
@@ -29,14 +24,14 @@ const Recipes = ({ showRecipes, setShowRecipes, showMainScreen, setShowMainScree
   }
 
   const recipes = currentCategories.map((recipes, inx) => {
-    return <div onClick={() => {
-    }} className="recipe_card" > <div ><p>{recipes.recipe.label}</p> <img src={recipes.recipe.image} onClick={() => {
+    return <div className="one_card"    onClick={() => {
+    }}> <p>{recipes.recipe.label}</p> <img src={recipes.recipe.image} onClick={() => {
       setShowMainScreen(false)
       setShowRecipes(false)
       setShowRecipeDetail(true)
       setcurrentRecipes(recipes)
      
-    }} /> </div></div>
+    }} /> </div>
   })
   return (
     <>
@@ -49,9 +44,11 @@ const Recipes = ({ showRecipes, setShowRecipes, showMainScreen, setShowMainScree
       }
     }}>Home</button><h1>{`${id} recipes` }</h1> <input placeholder="search"></input>
     </div>
-      {recipes}
+    <div className="recipe_card"> {recipes}</div>
     </>
+    
   )
+   
 }
 
 export default Recipes

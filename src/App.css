@@ -21,10 +21,16 @@
   gap: 30px;
 }
 .nav_bar{
-  width: 1000px;
+  
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+.one_card{
+  border-radius: 5px;
+  border: 1px solid;
+  box-shadow: gray;
+  gap: 50px;
 }
 .home_button{
   border-radius: 5px;
@@ -40,6 +46,11 @@ border: none;
   justify-content: center;
 }
 .recipe_card{
+  
+ display: grid;
+gap: 50px;
+ grid-template-columns: 1fr 1fr;
+
   justify-content: center;
   align-items: center;
 }
@@ -61,6 +72,14 @@ border: none;
   width: 125px ;
   height: 40px;
   background-color:yellow;
+}
+.Nutritional_button{
+  border-radius: 5px;
+  text-decoration: solid;
+  border: none;
+    width: 165px ;
+    height: 40px;
+    background-color:rgb(34, 120, 233);
 }
 .main_details{display: grid;
 
