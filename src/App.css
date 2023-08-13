@@ -3,12 +3,13 @@
 
   display: grid;
   text-align: center;
- 
-justify-content: center;
+
+
 }
 .app_Name_logo{
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .app_logo{
   width: 120px;
@@ -33,6 +34,32 @@ border: none;
   background-color:yellow;
 }
 .divButton{
+  width: 1000pxx;
   display: grid;
   gap: 20px;
+  justify-content: center;
 }
+.recipe_card{
+  justify-content: center;
+  align-items: center;
+}
+
+.all_recipe_details{
+  display: flex;
+  width: 850px;
+  height: 850px;
+
+}
+.image_button_details{
+  display: grid;
+}
+.Back_button{
+  border-radius: 5px;
+border: none;
+  width: 125px ;
+  height: 40px;
+  background-color:yellow;
+}
+.main_details{display: grid;
+gap: 
+30px;}

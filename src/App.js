@@ -2,7 +2,7 @@ import { useState, } from "react";
 import Categories from "./componants/categories";
 import "./App.css";
 import Recipes from "./componants/recipes";
-import Recipes_details from "./componants/recipes_detiles";
+import Recipes_details from "./componants/recipe_detiles";
 import logo from  "./logo/logo.png"
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
       {showMainScreen && <Categories showRecipes={showRecipes} setShowRecipes={setShowRecipes} showMainScreen={showMainScreen} setShowMainScreen={setShowMainScreen} setSelectedCategory={setSelectedCategory} setid={setid} />}
 
       {showRecipes && <Recipes showRecipes={showRecipes} showMainScreen={showMainScreen}  setShowMainScreen={setShowMainScreen} setShowRecipes={setShowRecipes}  showRecipeDetail={showRecipeDetail} setShowRecipeDetail={setShowRecipeDetail} selectedCategory={selectedCategory} id={id} setcurrentRecipes={setcurrentRecipes} />}
-      {showRecipeDetail && <Recipes_details currentRecipes={currentRecipes} showRecipeDetail={showRecipeDetail} setShowMainScreen={setShowMainScreen} setShowRecipeDetail={setShowRecipeDetail} />}
+      {showRecipeDetail && <Recipes_details currentRecipes={currentRecipes} showRecipeDetail={showRecipeDetail} setShowMainScreen={setShowMainScreen} setShowRecipeDetail={setShowRecipeDetail} setShowRecipes={setShowRecipes} showRecipes={showRecipes}/>}
     </div></div>
 
   );
