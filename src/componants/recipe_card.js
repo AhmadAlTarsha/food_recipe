@@ -23,8 +23,8 @@ const Recipes = ({ showRecipes, setShowRecipes, showMainScreen, setShowMainScree
 
   }
 
-  const recipes = currentCategories.map((recipes, inx) => {
-    return <div className="one_card"    onClick={() => {
+  const recipes = currentCategories.map((recipes, i) => {
+    return <div key={i} className="one_card"    onClick={() => {
     }}> <p>{recipes.recipe.label}</p> <img src={recipes.recipe.image} onClick={() => {
       setShowMainScreen(false)
       setShowRecipes(false)
@@ -44,7 +44,8 @@ const Recipes = ({ showRecipes, setShowRecipes, showMainScreen, setShowMainScree
       }
     }}>Home</button><h1>{`${id} recipes` }</h1> <input placeholder="search"></input>
     </div>
-    <div className="recipe_card"> {recipes}</div>
+    <div className="recipe_card"> {recipes} </div>
+    <button className="More_Recipes_button"> Show More Recipes</button>
     </>
     
   )

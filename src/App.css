@@ -122,3 +122,15 @@ th {
   background-color: black;
   color: white;
 }
+.dishType{
+  display: flex;
+  color: chocolate;
+}
+.More_Recipes_button{
+  border-radius: 5px;
+  text-decoration: solid;
+  border: none;
+    width: 165px ;
+    height: 40px;
+    background-color:rgb(34, 120, 233);
+}

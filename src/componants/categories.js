@@ -25,7 +25,7 @@ const Categories = ({ showRecipes, setShowRecipes, setSelectedCategory, setid, s
       });
   }
   const showCategories = categories.map((categories, i) => {
-    return <button id={categories} onClick={(e) => {
+    return <button key={i} id={categories} onClick={(e) => {
       
       //when i click on any category the main screen will be hide and recipes of this category will be showing
       // because the init val of showRecipes false 

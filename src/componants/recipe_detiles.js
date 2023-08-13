@@ -11,7 +11,7 @@ const Recipes_details = ({ currentRecipes, showRecipeDetail, setShowRecipeDetail
   })
 
   const dishType= currentRecipes.recipe.dishType.map((dishType,i)=>{
-    return <>{dishType}</>
+    return < >{dishType}</>
   })
   const cuisineType= currentRecipes.recipe.cuisineType.map((cuisineType,i)=>{
     return <>{cuisineType}</>
@@ -25,7 +25,7 @@ const Recipes_details = ({ currentRecipes, showRecipeDetail, setShowRecipeDetail
         // setShowMainScreen(true)
         setShowRecipes(true)
         setShowRecipeDetail(!showRecipeDetail)
-      }}>Back</button></div> <div className='main_details' ><div className='main_details_2'  ><h3>{currentRecipes.recipe.label}</h3><h4>{`caloeies : ${currentRecipes.recipe.calories} `}</h4><p>DishType : {dishType}</p><p>CuisineType : {cuisineType}</p></div> <div className='ingredient'><h3>ingredient</h3>{allIngredient}<div><button onClick={()=>{console.log(Nutritional);
+      }}>Back</button></div> <div className='main_details' ><div className='main_details_2'  ><h3>{currentRecipes.recipe.label}</h3><h4>{`caloeies : ${currentRecipes.recipe.calories} `}</h4><p>DishType : {dishType}</p><p >CuisineType : {cuisineType}</p></div> <div className='ingredient'><h3>ingredient</h3>{allIngredient}<div><button onClick={()=>{console.log(Nutritional);
 setShowNutritional(!Nutritional)
 if (!Nutritional) {
   setShow("hide")

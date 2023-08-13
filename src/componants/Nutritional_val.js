@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 
 const Nutritional_val = ({currentRecipes}) => {
     const totalNutrient=  currentRecipes.recipe.digest
+   // console.log(totalNutrient);
  const array=totalNutrient.splice(7)
-    console.log(currentRecipes);
+  
 
   return (
     <><table>
