@@ -6,10 +6,28 @@ const Nutritional_val = ({currentRecipes}) => {
     console.log(currentRecipes);
 
   return (
-    <>{totalNutrient.map((ele)=>{
-        return <div>{ele.label} <table>{ele.unit}</table ><table>{ele.total}</table></div>
-    })}</>
-  )
-}
+    <><table>
+            <thead>
+              <tr>
+                <th>label</th>
+                <th> ToTal Amount</th>
+                <th>Unit</th>
+              </tr>
+            </thead>
+            <tbody>
+             {totalNutrient.map((ele)=>{
+        return  <tr>
+  <td>{ele.label}</td>
+<td>{ele.total}</td>
+ <td>{ele.unit}</td>
+              </tr>
+    })}
+
+            </tbody>
+          </table></>
+  )}
+
 
 export default Nutritional_val
+
+
