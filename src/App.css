@@ -67,7 +67,7 @@ border: none;
 height: 350;}
 
 .main_details_2{
- 
+ height: 150px;
 display: grid;
 grid-template-columns: 1fr 1fr ;
 text-align: start;
