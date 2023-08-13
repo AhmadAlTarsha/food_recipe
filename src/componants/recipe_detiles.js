@@ -1,6 +1,11 @@
-import React from 'react'
+
+import { useState } from 'react'
+import Nutritional_val from './Nutritional_val'
+
 
 const Recipes_details = ({ currentRecipes, showRecipeDetail, setShowRecipeDetail, setShowMainScreen, setShowRecipes }) => {
+  const [Nutritional, setShowNutritional] = useState(false)
+  const [Show, setShow] = useState("Show")
   const allIngredient =currentRecipes.recipe.ingredientLines.map((ele,i)=>{
     return <li>{ele}</li>
   })
@@ -20,7 +25,13 @@ const Recipes_details = ({ currentRecipes, showRecipeDetail, setShowRecipeDetail
         // setShowMainScreen(true)
         setShowRecipes(true)
         setShowRecipeDetail(!showRecipeDetail)
-      }}>Back</button></div> <div className='main_details' ><div className='main_details_2'  ><h3>{currentRecipes.recipe.label}</h3><h4>{`caloeies : ${currentRecipes.recipe.calories} `}</h4><p>DishType : {dishType}</p><p>CuisineType : {cuisineType}</p></div> <div className='ingredient'><h3>ingredient</h3>{allIngredient}<button className='Nutritional_button' >Show Nutritional Value </button><h3>see the Recipe in the site</h3></div><div></div></div></div>
+      }}>Back</button></div> <div className='main_details' ><div className='main_details_2'  ><h3>{currentRecipes.recipe.label}</h3><h4>{`caloeies : ${currentRecipes.recipe.calories} `}</h4><p>DishType : {dishType}</p><p>CuisineType : {cuisineType}</p></div> <div className='ingredient'><h3>ingredient</h3>{allIngredient}<div><button onClick={()=>{console.log(Nutritional);
+setShowNutritional(!Nutritional)
+if (!Nutritional) {
+  setShow("show")
+}else{setShow("hide")}
+
+      }} className='Nutritional_button' >{Show} Nutritional Value  </button> </div><h3>see the Recipe in the site</h3></div>{Nutritional && <Nutritional_val currentRecipes={currentRecipes}/>}<div></div></div></div>
    
 
   )
