@@ -28,58 +28,5 @@ function App() {
 
   );
 }
-
 export default App;
 
-
-
-
-
-
-// function App() {
-//   const [showCategories, setShowCategories] = useState(true);
-//   const [showRecipes, setShowRecipes] = useState(false);
-//   const [showRecipeDetails, setShowRecipeDetails] = useState(false);
-//   const [selectedCategory, setSelectedCategory] = useState("");
-//   const [currentRecipes, setCurrentRecipes] = useState(null);
-//   const [recipeId, setRecipeId] = useState("");
-
-//   return (
-//     <div className="main_screen">
-//       <div className="app_name">
-//         <h1 id="app_title">Food Recipes</h1>
-//       </div>
-//       <div className="nav_bar">
-//         <h1>{`${recipeId} Recipes`}</h1>
-//       </div>
-//       <div className="recipe_card">
-//         {showCategories && (
-//           <Categories
-//             setShowCategories={setShowCategories}
-//             setSelectedCategory={setSelectedCategory}
-//             setRecipeId={setRecipeId}
-//           />
-//         )}
-//         {showRecipes && (
-//           <Recipes
-//             setShowRecipes={setShowRecipes}
-//             setShowCategories={setShowCategories}
-//             setShowRecipeDetails={setShowRecipeDetails}
-//             selectedCategory={selectedCategory}
-//             recipeId={recipeId}
-//             setCurrentRecipes={setCurrentRecipes}
-//           />
-//         )}
-//         {showRecipeDetails && (
-//           <RecipesDetails
-//             currentRecipes={currentRecipes}
-//             setShowRecipeDetails={setShowRecipeDetails}
-//             setShowRecipes={setShowRecipes}
-//           />
-//         )}
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default App;

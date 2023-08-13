@@ -63,16 +63,19 @@ border: none;
   background-color:yellow;
 }
 .main_details{display: grid;
-gap: 
-20px;
+
 height: 350;}
 
 .main_details_2{
-  width: 400px;
-  height: 150px;
+ 
 display: grid;
 grid-template-columns: 1fr 1fr ;
+text-align: start;
+column-gap: 30px;
+
 }
 .ingredient{
-  
+display: grid;
+gap: 0px;
+text-align: start;
 }
