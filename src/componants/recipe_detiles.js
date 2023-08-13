@@ -1,14 +1,17 @@
 import React from 'react'
 
 const Recipes_details = ({ currentRecipes, showRecipeDetail, setShowRecipeDetail, setShowMainScreen, setShowRecipes }) => {
-
   const ingredient=currentRecipes.recipe.ingredientLines
-
-  ingredient.map((ele,i)=>{
-    return <ul><div><li>{ele}</li></div></ul>
+const allingredient=  ingredient.map((ele,i)=>{
+    return <ul><li>{ele}</li></ul>
   })
-  console.log(ingredient);
-
+  const dishType= currentRecipes.recipe.dishType.map((dishType,i)=>{
+    return <>{dishType}</>
+  })
+  const cuisineType= currentRecipes.recipe.cuisineType.map((cuisineType,i)=>{
+    return <>{cuisineType}</>
+  })
+  
   //(currentRecipes )this data represent the current Recipe that the user selected it
   // add i send it from the recipes and send it as props to the recipe details
   return (
@@ -19,9 +22,8 @@ const Recipes_details = ({ currentRecipes, showRecipeDetail, setShowRecipeDetail
         console.log(currentRecipes.recipe);
 
         setShowRecipeDetail(!showRecipeDetail)
-      }}>Back</button> <div className='main_details' ><div><p>{currentRecipes.recipe.label}</p><p>{currentRecipes.recipe.calories}</p><p>{currentRecipes.recipe.dishType
-      }</p><p>{currentRecipes.recipe.cuisineType}</p></div>{ingredient} <div></div><div></div></div></div>
-    </div>
+      }}>Back</button></div> <div className='main_details' ><div><p>{currentRecipes.recipe.label}</p><p>{`caloeies : ${currentRecipes.recipe.calories} `}</p><p>DishType : {dishType}</p><p>CuisineType : {cuisineType}</p></div> <div>{allingredient}</div><div><h3>see the Recipe in the site</h3></div></div></div>
+   
 
   )
 }
