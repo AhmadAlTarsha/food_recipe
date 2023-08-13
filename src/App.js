@@ -1,34 +1,85 @@
-import { useState, useEffect } from "react";
+import { useState, } from "react";
 import Categories from "./componants/categories";
 import "./App.css";
 import Recipes from "./componants/recipes";
 import Recipes_details from "./componants/recipes_detiles";
-
-
-
+import logo from  "./logo/logo.png"
 
 function App() {
-  //const [id,setId]=useState("")
-  const [show, setShow] = useState(false)
-  const [show2,setShow2] = useState(true)
-const [show3, setShow3] = useState(false)
-  //const [show,setShow]=useState(true)
+  //---------------------this state to controlled for show and hide the min screen-------------------------------//
+  const [showMainScreen, setShowMainScreen] = useState(true)
+   //---------------------this state to controlled for show and hide the recipes of selected category---------//
+  const [showRecipes, setShowRecipes] = useState(false)
+   //---------------------this state to controlled for show and hide the recipe_details of selected recipe---//
+  const [showRecipeDetail, setShowRecipeDetail] = useState(false)
+ 
   const [selectedCategory, setSelectedCategory] = useState("");
- const [currentRecipes, setcurrentRecipes] = useState(null)
+  const [currentRecipes, setcurrentRecipes] = useState(null)
   const [id, setid] = useState("")
   return (
-    <div className="main_screen"> <div className="app_name"><h1 id="app_title" >Food Recipes</h1></div> <div className="nav_bar"><h1>{`${id} Recipes`}</h1></div> <div className="recipe_card">
+    <div className="All_componants"> <div ><div className="app_Name_logo"><h1 id="app_title" >Food Recipes</h1> <img className="app_logo" src={logo}/></div></div> <div className="nav_bar"></div> <div className="recipe_card">
 
-      {/* {show2 && show ? <Categories show={show} setShow={setShow} setSelectedCategory={setSelectedCategory} setid={setid} /> :
-        <Recipes show={show} setShow2={setShow2} setShow={setShow} selectedCategory={selectedCategory} id={id} />
+      
+      {showMainScreen && <Categories showRecipes={showRecipes} setShowRecipes={setShowRecipes} showMainScreen={showMainScreen} setShowMainScreen={setShowMainScreen} setSelectedCategory={setSelectedCategory} setid={setid} />}
 
-      } */}
-      {show2 &&<Categories show={show} setShow={setShow} show2={show2} setShow2={setShow2}  setSelectedCategory={setSelectedCategory} setid={setid} /> }
-      {show && <Recipes show={show} setShow2={setShow2} setShow={setShow} show2={show2} show3={show3} setShow3={setShow3} selectedCategory={selectedCategory} id={id} setcurrentRecipes={setcurrentRecipes}/> }
-      {show3 && <Recipes_details currentRecipes={currentRecipes}/>}
+      {showRecipes && <Recipes showRecipes={showRecipes} showMainScreen={showMainScreen}  setShowMainScreen={setShowMainScreen} setShowRecipes={setShowRecipes}  showRecipeDetail={showRecipeDetail} setShowRecipeDetail={setShowRecipeDetail} selectedCategory={selectedCategory} id={id} setcurrentRecipes={setcurrentRecipes} />}
+      {showRecipeDetail && <Recipes_details currentRecipes={currentRecipes} showRecipeDetail={showRecipeDetail} setShowMainScreen={setShowMainScreen} setShowRecipeDetail={setShowRecipeDetail} />}
     </div></div>
 
   );
 }
 
 export default App;
+
+
+
+
+
+
+// function App() {
+//   const [showCategories, setShowCategories] = useState(true);
+//   const [showRecipes, setShowRecipes] = useState(false);
+//   const [showRecipeDetails, setShowRecipeDetails] = useState(false);
+//   const [selectedCategory, setSelectedCategory] = useState("");
+//   const [currentRecipes, setCurrentRecipes] = useState(null);
+//   const [recipeId, setRecipeId] = useState("");
+
+//   return (
+//     <div className="main_screen">
+//       <div className="app_name">
+//         <h1 id="app_title">Food Recipes</h1>
+//       </div>
+//       <div className="nav_bar">
+//         <h1>{`${recipeId} Recipes`}</h1>
+//       </div>
+//       <div className="recipe_card">
+//         {showCategories && (
+//           <Categories
+//             setShowCategories={setShowCategories}
+//             setSelectedCategory={setSelectedCategory}
+//             setRecipeId={setRecipeId}
+//           />
+//         )}
+//         {showRecipes && (
+//           <Recipes
+//             setShowRecipes={setShowRecipes}
+//             setShowCategories={setShowCategories}
+//             setShowRecipeDetails={setShowRecipeDetails}
+//             selectedCategory={selectedCategory}
+//             recipeId={recipeId}
+//             setCurrentRecipes={setCurrentRecipes}
+//           />
+//         )}
+//         {showRecipeDetails && (
+//           <RecipesDetails
+//             currentRecipes={currentRecipes}
+//             setShowRecipeDetails={setShowRecipeDetails}
+//             setShowRecipes={setShowRecipes}
+//           />
+//         )}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;

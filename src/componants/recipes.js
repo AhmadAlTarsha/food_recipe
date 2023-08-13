@@ -6,7 +6,7 @@ import Recipes_details from "./recipes_detiles";
 
 const _id = "d4c16393"
 const app_key = "b0535457e09ea13ed80f7b42239b2c44"
-const Recipes = ({ show, setShow, id,setShow2,show2,show3,setShow3 ,setcurrentRecipes}) => {
+const Recipes = ({ showRecipes, setShowRecipes, showMainScreen, setShowMainScreen, showRecipeDetail, setShowRecipeDetail, setcurrentRecipes, id }) => {
   const [currentCategories, setCurrentCategories] = useState([])
   useEffect(() => {
     getCurrentCategories()
@@ -28,23 +28,23 @@ const Recipes = ({ show, setShow, id,setShow2,show2,show3,setShow3 ,setcurrentRe
   }
 
   const recipes = currentCategories.map((recipes, inx) => {
-    //console.log(recipes.recipe.label);
     return <div onClick={() => {
-      // console.log(recipes);
-    }} className="recipe_card" > <div ><p>{recipes.recipe.label}</p> <img onClick={() => {
-      // <Recipes_details recipes={recipes}/>
-      setShow2(false)
-      setShow(false)
-      setShow3(true)
+    }} className="recipe_card" > <div ><p>{recipes.recipe.label}</p> <img src={recipes.recipe.image} onClick={() => {
+      setShowRecipes(false)
+      setShowRecipeDetail(true)
       setcurrentRecipes(recipes)
-    }} src={recipes.recipe.image} /> </div></div>
+    }} /> </div></div>
   })
   return (
-    <><button onClick={()=>{
-      { setShow(!show)
-        
-        setShow2(!show2)
-    }}}>Back to Home</button>
+    <>
+    <div className="nav_bar">
+    <button className="home_button" onClick={() => {
+      {
+        setShowRecipes(!showRecipes)
+        setShowMainScreen(!showMainScreen)
+      }
+    }}>Home</button><h1>selected recipes</h1> <input placeholder="search"></input>
+    </div>
       {recipes}
 
       {/* <p>{selectedCategory}</p> */}

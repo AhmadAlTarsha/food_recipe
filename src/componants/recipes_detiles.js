@@ -1,9 +1,12 @@
 import React from 'react'
 
-const Recipes_details = ({currentRecipes}) => {
+const Recipes_details = ({currentRecipes,showRecipeDetail,setShowRecipeDetail,setShowMainScreen}) => {
  //console.log(currentRecipes);
   return (
-    <div> <button>back to categories</button></div>
+    <div> <button onClick={()=>{
+      setShowMainScreen(true)
+      setShowRecipeDetail(!showRecipeDetail)
+    }}>back to main Screen</button></div>
  
   )
 }

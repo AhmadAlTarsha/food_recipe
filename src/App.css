@@ -1,15 +1,36 @@
 
-.main_screen {
+.All_componants{
 
   display: grid;
   text-align: center;
  
 justify-content: center;
 }
+.app_Name_logo{
+  display: flex;
+  align-items: center;
+}
+.app_logo{
+  width: 120px;
+  height: 120px;
+}
 .categories_button{
   display: grid;
 
   gap: 30px;
+}
+.nav_bar{
+  width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.home_button{
+  border-radius: 5px;
+border: none;
+  width: 125px ;
+  height: 40px;
+  background-color:yellow;
 }
 .divButton{
   display: grid;
