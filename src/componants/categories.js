@@ -1,15 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect,useContext } from "react";
 import React from 'react'
 import axios from "axios";
 import App from "../App";
+import { RecipesContext } from "../App";
 const _id = "d4c16393"
 const app_key = "b0535457e09ea13ed80f7b42239b2c44"
 const categories = ["chicken", "mango", "spaghetti", "chocolate", "fish", "rice", "meat",]
 
-const Categories = ({ showRecipes, setShowRecipes, setSelectedCategory, setid, showMainScreen, setShowMainScreen }) => {
+const Categories = () => {
   const [currentCategories, setCurrentCategories] = useState([])
   const [id, setId] = useState("")
-
+const{showMainScreen,setShowMainScreen,showRecipes,setShowRecipes,setSelectedCategory,setid}=useContext(RecipesContext)
   useEffect(() => {
     getCurrentCategories()
   }, [])

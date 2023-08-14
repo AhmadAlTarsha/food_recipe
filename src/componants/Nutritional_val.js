@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
-
-const Nutritional_val = ({currentRecipes}) => {
+import { useState, useEffect,useContext } from "react";
+import { RecipesContext } from "../App";
+const Nutritional_val = () => {
+  const{currentRecipes}=useContext(RecipesContext)
     const totalNutrient=  currentRecipes.recipe.digest
    // console.log(totalNutrient);
  const array=totalNutrient.splice(7)
